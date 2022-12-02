@@ -11,3 +11,18 @@ or
 
 ```npm i -S root-require-utils```
 
+
+## Usage
+
+```js
+const requireUtils = require('root-require-utils')
+
+// resolving path from project root
+const path = requireUtils.resolve('package.json')
+console.log('path', path) // absolute path => .../project/package.json
+
+// require will import file from project root.
+const packageJson = requireUtils.require('package.json')
+console.log('packageJson', packageJson) // => { .... }
+
+```

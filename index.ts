@@ -21,4 +21,5 @@ class RootUtil {
 
 const rootRequireUtil = new RootUtil()
 
+module.exports = rootRequireUtil
 export default rootRequireUtil
