@@ -1,6 +1,6 @@
 {
   "name": "root-require-utils",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "index",
   "types": "./index.d.ts",
   "scripts": {
