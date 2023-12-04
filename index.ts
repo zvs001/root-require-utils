@@ -3,13 +3,13 @@ import path from 'path'
 class RootUtil {
   path = process.env.PWD
 
-  resolve(filePath: string): string {
+  resolvePath(filePath: string): string {
     if (!this.path) throw new Error('RootUtil.path is not defined')
     return path.resolve(this.path, filePath)
   }
 
   require(filePath: string) {
-    const requirePath = this.resolve(filePath)
+    const requirePath = this.resolvePath(filePath)
     return require(requirePath)
   }
 
