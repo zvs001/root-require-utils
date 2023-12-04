@@ -1,11 +1,21 @@
 import path from 'path'
 
-class RootUtil {
+export class RootUtil {
   path = process.env.PWD
 
   resolvePath(filePath: string): string {
     if (!this.path) throw new Error('RootUtil.path is not defined')
     return path.resolve(this.path, filePath)
+  }
+
+  exists(filePath: string): string | false {
+    const requirePath = this.resolvePath(filePath)
+    try {
+      const resolvePath = require.resolve(requirePath)
+      return resolvePath
+    } catch (e) {
+      return false
+    }
   }
 
   require(filePath: string) {
