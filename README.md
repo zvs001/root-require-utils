@@ -18,11 +18,13 @@ or
 const requireUtils = require('root-require-utils')
 
 // resolving path from project root
-const path = requireUtils.resolve('package.json')
+const path = requireUtils.resolvePath('package.json')
 console.log('path', path) // absolute path => .../project/package.json
 
 // require will import file from project root.
-const packageJson = requireUtils.require('package.json')
-console.log('packageJson', packageJson) // => { .... }
+if(requireUtils.exists('config-file')) {
+  const data = requireUtils.require('config-file')
+  console.log('config', data)
+}
 
 ```

@@ -8,6 +8,8 @@ export class RootUtil {
     return path.resolve(this.path, filePath)
   }
 
+  // resolve() is renamed to resolvePath() deleted and might be added later with different behaviour
+
   exists(filePath: string): string | false {
     const requirePath = this.resolvePath(filePath)
     try {
